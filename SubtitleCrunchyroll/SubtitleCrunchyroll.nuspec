@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>SubtitleCrunchyroll</id>
+    <version>1.0.0</version>
+    <title>Subtitle Crunchyroll</title>
+    <authors>Gleidson Rodrigues Nunes</authors>
+    <owners>Gleidosn Rodrigues Nunes</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Decrypts and converts Crunchyroll subtitles to SubStation Alpha subtitle format.</description>
+    <releaseNotes>First Release</releaseNotes>
+    <copyright>Copyright 2017</copyright>
+    <tags>Subtitle Legendas Crunchyroll</tags>
+  </metadata>
+</package>
