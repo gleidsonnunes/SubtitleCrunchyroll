@@ -10,13 +10,13 @@ Partial Public Class subtitle_script
 
     Private eventsField As List(Of subtitle_scriptEvent)
 
-    Private idField As UInteger
+    Private idField As String
 
     Private titleField As String
 
-    Private play_res_xField As UShort
+    Private play_res_xField As String
 
-    Private play_res_yField As UShort
+    Private play_res_yField As String
 
     Private lang_codeField As String
 
@@ -28,7 +28,7 @@ Partial Public Class subtitle_script
 
     Private status_stringField As String
 
-    Private wrap_styleField As Integer
+    Private wrap_styleField As String
 
     '''<remarks/>
     <System.Xml.Serialization.XmlArrayItemAttribute("style", IsNullable:=False)>
@@ -54,7 +54,7 @@ Partial Public Class subtitle_script
 
     '''<remarks/>
     <System.Xml.Serialization.XmlAttributeAttribute()>
-    Public Property id() As UInteger
+    Public Property id() As String
         Get
             Return Me.idField
         End Get
@@ -76,7 +76,7 @@ Partial Public Class subtitle_script
 
     '''<remarks/>
     <System.Xml.Serialization.XmlAttributeAttribute()>
-    Public Property play_res_x() As UShort
+    Public Property play_res_x() As String
         Get
             Return Me.play_res_xField
         End Get
@@ -87,7 +87,7 @@ Partial Public Class subtitle_script
 
     '''<remarks/>
     <System.Xml.Serialization.XmlAttributeAttribute()>
-    Public Property play_res_y() As UShort
+    Public Property play_res_y() As String
         Get
             Return Me.play_res_yField
         End Get
@@ -153,7 +153,7 @@ Partial Public Class subtitle_script
 
     '''<remarks/>
     <System.Xml.Serialization.XmlAttributeAttribute()>
-    Public Property wrap_style() As Integer
+    Public Property wrap_style() As String
         Get
             Return Me.wrap_styleField
         End Get
@@ -169,13 +169,13 @@ End Class
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True)>
 Partial Public Class subtitle_scriptStyle
 
-    Private idField As UInteger
+    Private idField As String
 
     Private nameField As String
 
     Private font_nameField As String
 
-    Private font_sizeField As Integer
+    Private font_sizeField As String
 
     Private primary_colourField As String
 
@@ -185,41 +185,41 @@ Partial Public Class subtitle_scriptStyle
 
     Private back_colourField As String
 
-    Private boldField As Integer
+    Private boldField As String
 
-    Private italicField As Integer
+    Private italicField As String
 
-    Private underlineField As Integer
+    Private underlineField As String
 
-    Private strikeoutField As Integer
+    Private strikeoutField As String
 
-    Private scale_xField As Integer
+    Private scale_xField As String
 
-    Private scale_yField As Integer
+    Private scale_yField As String
 
-    Private spacingField As Integer
+    Private spacingField As String
 
-    Private angleField As Integer
+    Private angleField As String
 
-    Private border_styleField As Integer
+    Private border_styleField As String
 
-    Private outlineField As Integer
+    Private outlineField As String
 
-    Private shadowField As Integer
+    Private shadowField As String
 
-    Private alignmentField As Integer
+    Private alignmentField As String
 
-    Private margin_lField As UShort
+    Private margin_lField As String
 
-    Private margin_rField As UShort
+    Private margin_rField As String
 
-    Private margin_vField As Integer
+    Private margin_vField As String
 
-    Private encodingField As Integer
+    Private encodingField As String
 
     '''<remarks/>
     <System.Xml.Serialization.XmlAttributeAttribute()>
-    Public Property id() As UInteger
+    Public Property id() As String
         Get
             Return Me.idField
         End Get
@@ -252,7 +252,7 @@ Partial Public Class subtitle_scriptStyle
 
     '''<remarks/>
     <System.Xml.Serialization.XmlAttributeAttribute()>
-    Public Property font_size() As Integer
+    Public Property font_size() As String
         Get
             Return Me.font_sizeField
         End Get
@@ -307,7 +307,7 @@ Partial Public Class subtitle_scriptStyle
 
     '''<remarks/>
     <System.Xml.Serialization.XmlAttributeAttribute()>
-    Public Property bold() As Integer
+    Public Property bold() As String
         Get
             Return Me.boldField
         End Get
@@ -318,7 +318,7 @@ Partial Public Class subtitle_scriptStyle
 
     '''<remarks/>
     <System.Xml.Serialization.XmlAttributeAttribute()>
-    Public Property italic() As Integer
+    Public Property italic() As String
         Get
             Return Me.italicField
         End Get
@@ -329,7 +329,7 @@ Partial Public Class subtitle_scriptStyle
 
     '''<remarks/>
     <System.Xml.Serialization.XmlAttributeAttribute()>
-    Public Property underline() As Integer
+    Public Property underline() As String
         Get
             Return Me.underlineField
         End Get
@@ -340,7 +340,7 @@ Partial Public Class subtitle_scriptStyle
 
     '''<remarks/>
     <System.Xml.Serialization.XmlAttributeAttribute()>
-    Public Property strikeout() As Integer
+    Public Property strikeout() As String
         Get
             Return Me.strikeoutField
         End Get
@@ -351,7 +351,7 @@ Partial Public Class subtitle_scriptStyle
 
     '''<remarks/>
     <System.Xml.Serialization.XmlAttributeAttribute()>
-    Public Property scale_x() As Integer
+    Public Property scale_x() As String
         Get
             Return Me.scale_xField
         End Get
@@ -362,7 +362,7 @@ Partial Public Class subtitle_scriptStyle
 
     '''<remarks/>
     <System.Xml.Serialization.XmlAttributeAttribute()>
-    Public Property scale_y() As Integer
+    Public Property scale_y() As String
         Get
             Return Me.scale_yField
         End Get
@@ -373,7 +373,7 @@ Partial Public Class subtitle_scriptStyle
 
     '''<remarks/>
     <System.Xml.Serialization.XmlAttributeAttribute()>
-    Public Property spacing() As Integer
+    Public Property spacing() As String
         Get
             Return Me.spacingField
         End Get
@@ -384,7 +384,7 @@ Partial Public Class subtitle_scriptStyle
 
     '''<remarks/>
     <System.Xml.Serialization.XmlAttributeAttribute()>
-    Public Property angle() As Integer
+    Public Property angle() As String
         Get
             Return Me.angleField
         End Get
@@ -395,7 +395,7 @@ Partial Public Class subtitle_scriptStyle
 
     '''<remarks/>
     <System.Xml.Serialization.XmlAttributeAttribute()>
-    Public Property border_style() As Integer
+    Public Property border_style() As String
         Get
             Return Me.border_styleField
         End Get
@@ -406,7 +406,7 @@ Partial Public Class subtitle_scriptStyle
 
     '''<remarks/>
     <System.Xml.Serialization.XmlAttributeAttribute()>
-    Public Property outline() As Integer
+    Public Property outline() As String
         Get
             Return Me.outlineField
         End Get
@@ -417,7 +417,7 @@ Partial Public Class subtitle_scriptStyle
 
     '''<remarks/>
     <System.Xml.Serialization.XmlAttributeAttribute()>
-    Public Property shadow() As Integer
+    Public Property shadow() As String
         Get
             Return Me.shadowField
         End Get
@@ -428,7 +428,7 @@ Partial Public Class subtitle_scriptStyle
 
     '''<remarks/>
     <System.Xml.Serialization.XmlAttributeAttribute()>
-    Public Property alignment() As Integer
+    Public Property alignment() As String
         Get
             Return Me.alignmentField
         End Get
@@ -439,7 +439,7 @@ Partial Public Class subtitle_scriptStyle
 
     '''<remarks/>
     <System.Xml.Serialization.XmlAttributeAttribute()>
-    Public Property margin_l() As UShort
+    Public Property margin_l() As String
         Get
             Return Me.margin_lField
         End Get
@@ -450,7 +450,7 @@ Partial Public Class subtitle_scriptStyle
 
     '''<remarks/>
     <System.Xml.Serialization.XmlAttributeAttribute()>
-    Public Property margin_r() As UShort
+    Public Property margin_r() As String
         Get
             Return Me.margin_rField
         End Get
@@ -461,7 +461,7 @@ Partial Public Class subtitle_scriptStyle
 
     '''<remarks/>
     <System.Xml.Serialization.XmlAttributeAttribute()>
-    Public Property margin_v() As Integer
+    Public Property margin_v() As String
         Get
             Return Me.margin_vField
         End Get
@@ -472,7 +472,7 @@ Partial Public Class subtitle_scriptStyle
 
     '''<remarks/>
     <System.Xml.Serialization.XmlAttributeAttribute()>
-    Public Property encoding() As Integer
+    Public Property encoding() As String
         Get
             Return Me.encodingField
         End Get
@@ -488,7 +488,7 @@ End Class
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True)>
 Partial Public Class subtitle_scriptEvent
 
-    Private idField As UInteger
+    Private idField As String
 
     Private startField As String
 
@@ -498,11 +498,11 @@ Partial Public Class subtitle_scriptEvent
 
     Private nameField As String
 
-    Private margin_lField As Integer
+    Private margin_lField As String
 
-    Private margin_rField As Integer
+    Private margin_rField As String
 
-    Private margin_vField As Integer
+    Private margin_vField As String
 
     Private effectField As String
 
@@ -510,7 +510,7 @@ Partial Public Class subtitle_scriptEvent
 
     '''<remarks/>
     <System.Xml.Serialization.XmlAttributeAttribute()>
-    Public Property id() As UInteger
+    Public Property id() As String
         Get
             Return Me.idField
         End Get
@@ -565,7 +565,7 @@ Partial Public Class subtitle_scriptEvent
 
     '''<remarks/>
     <System.Xml.Serialization.XmlAttributeAttribute()>
-    Public Property margin_l() As Integer
+    Public Property margin_l() As String
         Get
             Return Me.margin_lField
         End Get
@@ -576,7 +576,7 @@ Partial Public Class subtitle_scriptEvent
 
     '''<remarks/>
     <System.Xml.Serialization.XmlAttributeAttribute()>
-    Public Property margin_r() As Integer
+    Public Property margin_r() As String
         Get
             Return Me.margin_rField
         End Get
@@ -587,7 +587,7 @@ Partial Public Class subtitle_scriptEvent
 
     '''<remarks/>
     <System.Xml.Serialization.XmlAttributeAttribute()>
-    Public Property margin_v() As Integer
+    Public Property margin_v() As String
         Get
             Return Me.margin_vField
         End Get

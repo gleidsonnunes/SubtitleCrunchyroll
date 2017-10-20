@@ -33,18 +33,18 @@ Public Class CrSubtitleDecrypt
     Public Shared Function ConvertToAss(ByVal input As Byte()) As Byte()
         Dim xml As New XmlSerializer(GetType(subtitle_script))
         Dim classxml As subtitle_script = CTypeDynamic(Of subtitle_script)(xml.Deserialize(New MemoryStream(input)))
-        Dim header As String = String.Format("[Script Info]\nTitle: {0}\nScriptType: v4.00+\nWrapStyle: {1}\nPlayResX: {2}\nPlayResY: {3}\n\n", classxml.title, classxml.wrap_style, classxml.play_res_x, classxml.play_res_y)
-        Dim styles As String = "[V4+ Styles]\nFormat: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding\n"
-        Dim events As String = "\n[Events]\nFormat: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text\n"
+        Dim header As String = String.Format("[Script Info]{4}Title: {0}{4}ScriptType: v4.00+{4}WrapStyle: {1}{4}PlayResX: {2}{4}PlayResY: {3}{4}{4}", classxml.title, classxml.wrap_style, classxml.play_res_x, classxml.play_res_y, vbCr)
+        Dim styles As String = "[V4+ Styles]" + vbCr + "Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding" + vbCr
+        Dim events As String = vbCr + "[Events]" + vbCr + "Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text" + vbCr
         For Each style As subtitle_scriptStyle In classxml.styles
             If style.scale_x = 0 Or style.scale_y = 0 Then
                 style.scale_x = 100
                 style.scale_y = 100
             End If
-            styles = styles + String.Format("Style:  {0},{1},{2},{3},{4},{5},{6},{7},{8},{9},{10},{11},{12},{13},{14},{15},{16},{17},{18},{19},{20},{21},{22}\n", style.name, style.font_name, style.font_size, style.primary_colour, style.secondary_colour, style.outline_colour, style.back_colour, style.bold, style.italic, style.underline, style.strikeout, style.scale_x, style.scale_y, style.spacing, style.angle, style.border_style, style.outline, style.shadow, style.alignment, style.margin_l, style.margin_r, style.margin_v, style.encoding)
+            styles = styles + String.Format("Style:  {0},{1},{2},{3},{4},{5},{6},{7},{8},{9},{10},{11},{12},{13},{14},{15},{16},{17},{18},{19},{20},{21},{22}{23}", style.name, style.font_name, style.font_size, style.primary_colour, style.secondary_colour, style.outline_colour, style.back_colour, style.bold, style.italic, style.underline, style.strikeout, style.scale_x, style.scale_y, style.spacing, style.angle, style.border_style, style.outline, style.shadow, style.alignment, style.margin_l, style.margin_r, style.margin_v, style.encoding, vbCr)
         Next
         For Each event1 As subtitle_scriptEvent In classxml.events
-            events = events + String.Format("Dialogue: 0,{0},{1},{2},{3},{4},{5},{6},{7},{8}\n", event1.start, event1.end, event1.style, event1.name, event1.margin_l, event1.margin_r, event1.margin_v, event1.effect, event1.text)
+            events = events + String.Format("Dialogue: 0,{0},{1},{2},{3},{4},{5},{6},{7},{8}{9}", event1.start, event1.end, event1.style, event1.name, event1.margin_l, event1.margin_r, event1.margin_v, event1.effect, event1.text, vbCr)
         Next
         Return Encoding.UTF8.GetBytes(header + styles + events)
     End Function
