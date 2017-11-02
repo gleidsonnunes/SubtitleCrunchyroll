@@ -32,7 +32,7 @@ Public Class CrSubtitleDecrypt
 
     Public Shared Function ConvertToAss(ByVal input As Byte()) As Byte()
         Dim xml As New XmlSerializer(GetType(subtitle_script))
-        Dim classxml As subtitle_script = CTypeDynamic(Of subtitle_script)(xml.Deserialize(New MemoryStream(input)))
+        Dim classxml As subtitle_script = CType(xml.Deserialize(New MemoryStream(input)), subtitle_script)
         Dim header As String = String.Format("[Script Info]{4}Title: {0}{4}ScriptType: v4.00+{4}WrapStyle: {1}{4}PlayResX: {2}{4}PlayResY: {3}{4}", classxml.title, classxml.wrap_style, classxml.play_res_x, classxml.play_res_y, vbCrLf)
         Dim styles As String = vbCrLf + "[V4+ Styles]" + vbCrLf + "Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding" + vbCrLf
         Dim events As String = vbCrLf + "[Events]" + vbCrLf + "Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text" + vbCrLf
